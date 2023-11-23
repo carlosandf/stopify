@@ -1,12 +1,15 @@
 ---
-import LibraryIcon from "../icons/Library.astro";
-import HomeIcon from "../icons/Home.astro";
-import SearchIcon from "../icons/Search.astro";
-import SideMenuItem from "./SideMenuItem.astro";
+import LibraryIcon from "@/icons/Library.astro";
+import HomeIcon from "@/icons/Home.astro";
+import SearchIcon from "@/icons/Search.astro";
+import SideMenuItem from "@/components/SideMenuItem.astro";
+import SideMenuCard from "@/components/SideMenuCard.astro";
+
+import { playlists } from "@/lib/data";
 ---
 
-<nav class="flex flex-col flex-1 gap-2">
-  <div class="bg-[var(--bg-color)] rounded-lg">
+<nav class="grid grid-rows-[auto_1fr] gap-2 h-full">
+  <div class="bg-dark rounded-lg">
     <ul class="py-[8px] px-[12px]">
       <SideMenuItem href="/">
         <HomeIcon /> Inicio
@@ -16,13 +19,18 @@ import SideMenuItem from "./SideMenuItem.astro";
       </SideMenuItem>
     </ul>
   </div>
-  <div class="bg-[var(--bg-color)] flex-1 rounded-lg">
+  <div
+    class="bg-dark flex-1 rounded-lg grid overflow-hidden grid-rows-[auto_1fr]"
+  >
     <header class="p-2">
       <button
-        class="flex py-[8px] px-[16px] h-10 gap-5 items-center font-bold leading-tight-[0] text-[var(--txt-second)] hover:text-[var(--txt-primary)]"
+        class="flex py-[8px] px-[16px] h-10 gap-5 items-center font-bold leading-tight-[0] text-white-2 hover:text-white-1"
       >
         <LibraryIcon /> Tu biblioteca
       </button>
     </header>
+    <ul class="px-2 overflow-y-auto">
+      {playlists.map((playlist) => <SideMenuCard playlist={playlist} />)}
+    </ul>
   </div>
 </nav>
