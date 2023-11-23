@@ -41,3 +41,26 @@
 * {
   box-sizing: border-box;
 }
+html {
+  font-family: "CircularStd", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  margin: 100px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #555;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
