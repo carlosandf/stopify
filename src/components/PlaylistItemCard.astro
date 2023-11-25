@@ -14,9 +14,9 @@ const artistListsString = artists.join(", ");
 
 <a
   href={`playlist/${id}`}
-  class="playlist-item grid grid-cols-[auto_1fr_auto] relative overflow-hidden items-center gap-4 rounded-[4px] bg-white-2/20 transition-all duration-200 hover:bg-white-2/40"
+  class="playlist-item h-12 grid grid-cols-[auto_1fr_auto] relative overflow-hidden items-center gap-4 rounded-[4px] bg-white-2/20 transition-all duration-200 hover:bg-white-2/40"
 >
-  <picture class="h-11 w-11 flex-none aspect-square">
+  <picture class="h-12 flex-none aspect-square">
     <img
       src={cover}
       alt={`Cover of ${title} by ${artistListsString}`}
