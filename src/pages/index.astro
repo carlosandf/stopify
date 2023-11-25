@@ -1,12 +1,25 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import PlaylistItemCard from "@/components/PlaylistItemCard.astro";
+import { playlists } from "@/lib/data";
 ---
 
 <Layout title="Stopify - Clon de Spotify">
   <div
     id="playlist-container"
-    class="relative transition-all duration-500 bg-green-600"
+    class="relative transition-all duration-500 bg-green-500 py-5"
   >
+    <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/80"></div>
+    <!-- <PageHeader /> -->
+    <div class="relative z-10 px-5">
+      <!-- <Greetings /> -->
+      <span class="text-white-1 text-[34px] font-bold font">Buenas tardes</span>
+      <div
+        class="grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] mt-5 gap-3"
+      >
+        {playlists?.map((playlist) => <PlaylistItemCard playlist={playlist} />)}
+      </div>
+    </div>
   </div>
 </Layout>
 
